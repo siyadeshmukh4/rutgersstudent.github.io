@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Siya Deshmukh | About Me</title>
+
+    <meta
+        name="description"
+        content="Meet Siya Deshmukh, a Rutgers Data Science and BAIT student
+        with experience in software engineering, machine learning,
+        and campus leadership."
+    >
+
+    <style>
+        :root {
+            --ink: #142c35;
+            --muted: #52656c;
+            --blue: #126b80;
+            --line: #d6e2e5;
+            --background: #f5f8fa;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+        }
+
+        body {
+            margin: 0;
+            background: var(--background);
+            color: var(--ink);
+            font: 16px/1.7 Arial, sans-serif;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        header {
+            background: white;
+            border-bottom: 1px solid var(--line);
+            position: sticky;
+            top: 0;
+            z-index: 5;
+        }
+
+        .nav {
+            max-width: 1160px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 30px;
+            gap: 20px;
+        }
+
+        .brand {
+            font-weight: 800;
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .links a {
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        .links a:hover {
+            color: var(--blue);
+        }
+
+        main {
+            max-width: 1160px;
+            margin: auto;
+            padding: 0 30px;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            gap: 70px;
+            align-items: center;
+            padding: 70px 0;
+        }
+
+        .eyebrow {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--blue);
+        }
+
+        h1 {
+            font-family: Georgia, serif;
+            font-size: clamp(48px, 7vw, 86px);
+            font-weight: 400;
+            letter-spacing: -3px;
+            line-height: 1.06;
+            margin: 20px 0;
+        }
+
+        h1 span {
+            color: var(--blue);
+        }
+
+        .intro {
+            font-size: 21px;
+            line-height: 1.55;
+            max-width: 590px;
+        }
+
+        .sub {
+            color: var(--muted);
+        }
+
+        .portrait {
+            position: relative;
+        }
+
+        .portrait img {
+            width: 100%;
+            display: block;
+            aspect-ratio: 4 / 4.5;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 3px;
+        }
+
+        .caption {
+            background: var(--ink);
+            color: white;
+            padding: 17px 22px;
+            font-size: 14px;
+        }
+
+        .button {
+            display: inline-block;
+            text-decoration: none;
+            background: var(--ink);
+            color: white;
+            padding: 12px 23px;
+            margin-top: 14px;
+            border-radius: 4px;
+        }
+
+        .button:hover {
+            background: var(--blue);
+        }
+
+        .facts {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+            padding: 24px 0;
+            gap: 30px;
+        }
+
+        .facts strong {
+            display: block;
+        }
+
+        .facts span {
+            font-size: 14px;
+            color: var(--muted);
+        }
+
+        section {
+            padding: 58px 0;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .section-heading {
+            display: flex;
+            gap: 25px;
+            align-items: baseline;
+            margin-bottom: 28px;
+        }
+
+        .number {
+            font-size: 14px;
+            color: var(--blue);
+        }
+
+        h2 {
+            font: 400 38px/1.2 Georgia, serif;
+            margin: 0;
+        }
+
+        h3 {
+            font-size: 20px;
+            line-height: 1.35;
+            margin: 0 0 8px;
+        }
+
+        p {
+            margin: 0 0 16px;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 70px;
+        }
+
+        .note {
+            border-left: 3px solid var(--blue);
+            padding-left: 25px;
+        }
+
+        .note strong {
+            display: block;
+        }
+
+        .experience {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            gap: 34px;
+            padding: 25px 0;
+            border-top: 1px solid var(--line);
+        }
+
+        .experience:first-of-type {
+            border-top: 0;
+        }
+
+        .meta {
+            font-size: 14px;
+            color: var(--muted);
+        }
+
+        .organization {
+            font-weight: bold;
+            color: var(--blue);
+            margin-bottom: 5px;
+        }
+
+        ul {
+            margin: 12px 0 0;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid var(--line);
+            padding: 28px;
+        }
+
+        .tag {
+            font-size: 13px;
+            color: var(--blue);
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: var(--muted);
+            margin-bottom: 0;
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 14px;
+        }
+
+        .chips span {
+            background: #e5eff2;
+            padding: 5px 12px;
+            font-size: 14px;
+            border-radius: 3px;
+        }
+
+        .personal {
+            background: var(--ink);
+            color: white;
+            padding: 35px;
+            margin-top: 25px;
+        }
+
+        .personal h3 {
+            font: 400 28px Georgia, serif;
+        }
+
+        .personal p {
+            color: #cddde2;
+            margin: 0;
+        }
+
+        footer {
+            max-width: 1160px;
+            margin: auto;
+            padding: 30px;
+            color: var(--muted);
+            font-size: 14px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        a:focus-visible {
+            outline: 3px solid #1590af;
+            outline-offset: 5px;
+        }
+
+        /* Adjust the layout for smaller screens. */
+        @media (max-width: 760px) {
+            .nav {
+                align-items: flex-start;
+                flex-direction: column;
+                padding: 14px 22px;
+            }
+
+            .links {
+                gap: 18px;
+                flex-wrap: wrap;
+            }
+
+            main {
+                padding: 0 22px;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                padding: 40px 0;
+            }
+
+            .portrait {
+                max-width: 420px;
+            }
+
+            .intro {
+                font-size: 19px;
+            }
+
+            h1 {
+                letter-spacing: -2px;
+            }
+
+            .facts {
+                gap: 16px;
+                grid-template-columns: 1fr;
+            }
+
+            .about-grid,
+            .cards,
+            .skills {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .experience {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            section {
+                padding: 38px 0;
+            }
+
+            h2 {
+                font-size: 32px;
+            }
+
+            footer {
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+        }
+
+        @media print {
+            header,
+            .button {
+                display: none;
+            }
+
+            .hero {
+                padding-top: 20px;
+            }
+
+            section {
+                break-inside: avoid;
+            }
+
+            .portrait {
+                max-width: 250px;
+            }
+
+            body {
+                background: white;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav class="nav" aria-label="Main navigation">
+            <a class="brand" href="#home">SIYA DESHMUKH</a>
+
+            <div class="links">
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#leadership">Leadership</a>
+                <a href="#skills">Skills</a>
+            </div>
+        </nav>
+    </header>
+
+    <main id="home">
+        <!-- Introduction and headshot -->
+        <div class="hero">
+            <div>
+                <div class="eyebrow">
+                    Rutgers University · Class of 2028
+                </div>
+
+                <h1>
+                    Hi, I'm Siya.<br>
+                    <span>Curious by nature.</span>
+                </h1>
+
+                <p class="intro">
+                    I'm a Data Science and Business Analytics &amp;
+                    Information Technology student who enjoys turning
+                    complex problems into practical solutions.
+                </p>
+
+                <p class="sub">
+                    My work brings together software development,
+                    machine learning, and a growing interest in how
+                    technology supports financial services.
+                </p>
+
+                <a class="button" href="#experience">
+                    Explore my experience
+                </a>
+            </div>
+
+            <div class="portrait">
+                <img
+                    src="headshot.jpg"
+                    alt="Siya Deshmukh wearing a black blazer and smiling"
+                    width="756"
+                    height="748"
+                >
+
+                <div class="caption">
+                    Siya Deshmukh · Edison, New Jersey
+                </div>
+            </div>
+        </div>
+
+        <div class="facts">
+            <div>
+                <strong>Data Science + BAIT</strong>
+                <span>Rutgers University–New Brunswick</span>
+            </div>
+
+            <div>
+                <strong>Software + Machine Learning</strong>
+                <span>Enterprise technology and applied AI</span>
+            </div>
+
+            <div>
+                <strong>Community + Collaboration</strong>
+                <span>Campus leadership and technical support</span>
+            </div>
+        </div>
+
+        <!-- About -->
+        <section id="about">
+            <div class="section-heading">
+                <span class="number">01</span>
+                <h2>About me</h2>
+            </div>
+
+            <div class="about-grid">
+                <div>
+                    <p>
+                        I'm pursuing a Bachelor of Science at Rutgers
+                        University–New Brunswick, majoring in Data
+                        Science on the Computer Science track and
+                        Business Analytics &amp; Information Technology,
+                        with an expected graduation in May 2028.
+                    </p>
+
+                    <p>
+                        Through my MetLife internship, Rutgers OIT role,
+                        and AI fellowship, I've explored how technical
+                        ideas become tools people can actually use.
+                        I enjoy building interfaces, troubleshooting
+                        challenging issues, and finding useful patterns
+                        in data.
+                    </p>
+
+                    <p>
+                        I bring an organized, collaborative approach
+                        to my work, whether I'm developing a project
+                        with teammates or balancing coursework with
+                        campus leadership.
+                    </p>
+                </div>
+
+                <div class="note">
+                    <strong>Education</strong>
+                    <p>
+                        Rutgers University–New Brunswick<br>
+                        BS expected May 2028
+                    </p>
+
+                    <strong>Coursework and interests</strong>
+                    <p>
+                        Data structures, programming, databases,
+                        statistical modeling, and machine learning.
+                    </p>
+
+                    <strong>Languages</strong>
+                    <p>English, Marathi, and Hindi</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section id="experience">
+            <div class="section-heading">
+                <span class="number">02</span>
+                <h2>Experience</h2>
+            </div>
+
+            <article class="experience">
+                <div>
+                    <div class="organization">MetLife</div>
+                    <div class="meta">
+                        Summer 2026<br>
+                        Clarks Summit, PA
+                    </div>
+                </div>
+
+                <div>
+                    <h3>Technical Development Intern</h3>
+                    <p class="meta">
+                        Global Technology &amp; Operations
+                    </p>
+
+                    <ul>
+                        <li>
+                            Modernized the interface of an internal stock
+                            tracking portal while retaining its existing
+                            backend.
+                        </li>
+                        <li>
+                            Built dashboard layouts, graph and calendar
+                            widgets, buttons, and dropdowns using Visual
+                            Studio and Bootstrap.
+                        </li>
+                        <li>
+                            Worked with a mentor to resolve integration,
+                            compilation, and database access issues.
+                        </li>
+                        <li>
+                            Validated interface functionality and database
+                            data retrieval, confirming parity with the
+                            previous portal and obtaining manager sign-off.
+                        </li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="experience">
+                <div>
+                    <div class="organization">Rutgers OIT</div>
+                    <div class="meta">
+                        2025–Present<br>
+                        Rutgers University
+                    </div>
+                </div>
+
+                <div>
+                    <h3>Technical Consultant</h3>
+
+                    <ul>
+                        <li>
+                            Help students and staff troubleshoot Wi-Fi,
+                            printing, Canvas, email, NetID activation,
+                            and Duo authentication.
+                        </li>
+                        <li>
+                            Document technical issues and support requests
+                            in ServiceNow.
+                        </li>
+                        <li>
+                            Supported approximately 150 students during
+                            new student orientation and created a Duo
+                            and Wi-Fi guide to streamline assistance.
+                        </li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="experience">
+                <div>
+                    <div class="organization">
+                        Break Through Tech AI Studio
+                    </div>
+                    <div class="meta">
+                        April 2026–Present<br>
+                        Remote
+                    </div>
+                </div>
+
+                <div>
+                    <h3>AI / ML Fellow</h3>
+
+                    <ul>
+                        <li>
+                            Partner with Thrivent on a semester-long
+                            financial resilience modeling project.
+                        </li>
+                        <li>
+                            Collaborate with teammates to analyze and
+                            visualize datasets, develop predictive
+                            models, and communicate findings.
+                        </li>
+                        <li>
+                            Participate in weekly project check-ins,
+                            industry mentorship, and professional
+                            development.
+                        </li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="experience">
+                <div>
+                    <div class="organization">Blueprint</div>
+                    <div class="meta">
+                        November–December 2025
+                    </div>
+                </div>
+
+                <div>
+                    <h3>Software Engineering Backend Fellow</h3>
+
+                    <ul>
+                        <li>
+                            Developed backend mini-projects covering
+                            login functionality, socket programming,
+                            and client-server communication.
+                        </li>
+                        <li>
+                            Collaborated through GitHub and built a
+                            Python and SQLite attendance tracker
+                            as a final project.
+                        </li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="experience">
+                <div>
+                    <div class="organization">
+                        Garden State Tennis Center
+                    </div>
+                    <div class="meta">
+                        2023–2024<br>
+                        Edison, NJ
+                    </div>
+                </div>
+
+                <div>
+                    <h3>Tennis Instructor</h3>
+
+                    <ul>
+                        <li>
+                            Coached children ages 5–12 in groups of 4–6,
+                            teaching foundational tennis skills and
+                            encouraging teamwork.
+                        </li>
+                    </ul>
+                </div>
+            </article>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects">
+            <div class="section-heading">
+                <span class="number">03</span>
+                <h2>Selected projects</h2>
+            </div>
+
+            <div class="cards">
+                <article class="card">
+                    <div class="tag">PYTHON · SQLITE</div>
+                    <h3>Event Attendance &amp; Engagement Tracker</h3>
+                    <p>
+                        A command-line application with member, event,
+                        and attendance records. Supports check-in and
+                        check-out, attendance rates, unique event
+                        counts, top-member reporting, and CSV exports.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <div class="tag">PYTHON · MACHINE LEARNING</div>
+                    <h3>Telecom Customer Churn Analysis</h3>
+                    <p>
+                        Compared logistic regression and decision trees
+                        on an imbalanced churn dataset. Evaluated ROC
+                        AUC and PR AUC alongside accuracy and explored
+                        SHAP feature importance.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <div class="tag">JAVA · DATA STRUCTURES</div>
+                    <h3>Expense Splitting Application</h3>
+                    <p>
+                        A command-line tool that tracks shared expenses
+                        with a LinkedHashMap and uses a greedy settlement
+                        approach to calculate repayments.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <div class="tag">PYTHON · RECOMMENDATIONS</div>
+                    <h3>Movie Recommender</h3>
+                    <p>
+                        A command-line movie recommendation project
+                        that organizes movie, rating, and user-rating
+                        data.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <div class="tag">JAVA</div>
+                    <h3>Snake Game</h3>
+                    <p>
+                        A Java game project that brings programming
+                        practice into an interactive format.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <div class="tag">R · STATISTICAL ANALYSIS</div>
+                    <h3>Heart Disease &amp; Decathlon Analysis</h3>
+                    <p>
+                        Explored datasets through visualization and
+                        statistical analysis, including decision tree
+                        models for heart disease and comparisons of
+                        decathlon performance.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Leadership -->
+        <section id="leadership">
+            <div class="section-heading">
+                <span class="number">04</span>
+                <h2>Leadership &amp; community</h2>
+            </div>
+
+            <div class="cards">
+                <article class="card">
+                    <div class="tag">NJ NAACH</div>
+                    <h3>Philanthropy &amp; Sponsorship</h3>
+                    <p>
+                        Contribute to Rutgers' national dance competition
+                        through philanthropy and sponsorship work.
+                        Supported Project Stree initiatives, a charity
+                        show, bake sales, and care packages.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <div class="tag">
+                        RUTGERS MARATHI STUDENT ASSOCIATION
+                    </div>
+                    <h3>Founding Member &amp; Secretary</h3>
+                    <p>
+                        Helped establish the organization in April 2026
+                        and served as secretary. Contributed to cultural
+                        programming, including a Ganesh Chaturthi workshop.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <div class="tag">ALPHA OMEGA EPSILON</div>
+                    <h3>STEM Community</h3>
+                    <p>
+                        Participate in a campus sorority centered on
+                        women in STEM, connection, and professional
+                        growth.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <div class="tag">VOLUNTEERING</div>
+                    <h3>Service &amp; Tutoring</h3>
+                    <p>
+                        Volunteered at a senior veterans home, tutored
+                        Algebra 1 through the National Honor Society,
+                        and supported community donation efforts.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Skills and hobbies -->
+        <section id="skills">
+            <div class="section-heading">
+                <span class="number">05</span>
+                <h2>Skills &amp; beyond</h2>
+            </div>
+
+            <div class="skills">
+                <div>
+                    <h3>Programming</h3>
+
+                    <div class="chips">
+                        <span>Java</span>
+                        <span>Python</span>
+                        <span>SQL</span>
+                        <span>R</span>
+                        <span>C++</span>
+                        <span>HTML / CSS</span>
+                        <span>MATLAB</span>
+                    </div>
+                </div>
+
+                <div>
+                    <h3>Tools</h3>
+
+                    <div class="chips">
+                        <span>GitHub</span>
+                        <span>VS Code</span>
+                        <span>Visual Studio</span>
+                        <span>Eclipse</span>
+                        <span>Excel</span>
+                        <span>PowerPoint</span>
+                        <span>ServiceNow</span>
+                        <span>SQLite</span>
+                        <span>Bootstrap</span>
+                    </div>
+                </div>
+
+                <div>
+                    <h3>Data &amp; modeling</h3>
+
+                    <div class="chips">
+                        <span>pandas</span>
+                        <span>NumPy</span>
+                        <span>Data visualization</span>
+                        <span>Regression</span>
+                        <span>Decision trees</span>
+                        <span>Model evaluation</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="personal">
+                <h3>Outside the classroom</h3>
+                <p>
+                    I enjoy tennis, pickleball, golf, spikeball,
+                    working out, painting, trying new food spots,
+                    and spending time with friends. I played varsity
+                    tennis for four years and also have a background
+                    in dance.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <span>Siya Deshmukh</span>
+        <span>Data Science · Technology · Community</span>
+    </footer>
+</body>
+</html>
